@@ -3,8 +3,8 @@
   "scripts": {
     "dev": "vite",
     "prebuild": "rm -rf dist dist.zip",
-    "build": "tsc && vite build && yarn archive",
-    "build:full": "tsc && vite build && yarn squash && yarn archive",
+    "build": "tsc && vite build && npm run archive",
+    "build:full": "tsc && vite build && npm run squash && npm run archive",
     "squash": "tinypng dist/",
     "archive": "cd dist && zip -9 ../dist.zip -r * && cd ../ && ./scripts/measure.sh dist.zip",
     "typecheck": "tsc",
