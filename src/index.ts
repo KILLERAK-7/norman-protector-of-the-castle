@@ -24,19 +24,19 @@ const ENTER = 13;
 const KEY_P = 80;
 
 const INTRO_DIALOGUE = [
-  "Norman wasn't a particularly popular necromancer...",
-  "         The other villagers hunted him.",
-  "     Sometimes they even finished the job (@)",
-  "  But like any self-respecting necromancer...",
-  "        Norman just brought himself back.",
+  "   Norman wasn't a particularly popular Guard...",
+  "The other guards were exceptionally good than him.",
+  "     even with lack of power he still tried",
+  "       as he swore to protect the castle",
+  "   stopping the invaders who entered the castle",
 ];
 
 const OUTRO_DIALOGUE = [
   "",
-  "It was over.",
-  "Norman was able to study peacefully.",
-  "But he knew that eventually, they'd be back.",
-  "THE END",
+  "             It was over.",
+  "       Norman saved the castle",
+  "But he never knew whats to come in future.",
+  "               THE END",
 ];
 
 onpointerup = () => {
