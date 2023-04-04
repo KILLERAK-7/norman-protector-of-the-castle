@@ -1,9 +1,12 @@
-FROM node:alpine
+FROM node:16
 
-WORKDIR /user/app
+# Create app directory
+WORKDIR /usr/src/app
 
-COPY ./package.json ./
+COPY package*.json ./
+
 RUN npm install
-COPY . .
 
-CMD ["npm run dev"]
+COPY . /usr/src/app
+
+CMD ["npm","run", "dev"]
