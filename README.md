@@ -3,6 +3,7 @@ This was a submission for JS13K 2022. It's not under active development. There's
 
 To get a development environment running:
 - Install node
+- Run `npm install -global yarn` in admin terminal
 - Run `npm install` in the project directory
 - Run `npm run dev` to run locally
 
