@@ -9,4 +9,4 @@ RUN npm install
 
 COPY . /usr/src/app
 
-CMD ["npx", "http-server"]
+CMD ["npm","run","dev"]
