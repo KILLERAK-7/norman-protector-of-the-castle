@@ -3,13 +3,13 @@
   "scripts": {
     "dev": "vite",
     "prebuild": "rm -rf dist dist.zip",
-    "build": "tsc && vite build && cd dist && npx http-server",
+    "build": "tsc && vite build",
     "build:full": "tsc && vite build && npm run squash && npm run archive",
     "squash": "tinypng dist/",
     "archive": "cd dist &&",
     "typecheck": "tsc",
     "preview": "vite preview",
-    "docker": "npm run build "
+    "docker": "npm run build && cd dist && docker build -t ccproject.azurecr.io/norman-protector-of-the-castle:latest . && docker run -d -p 3000:8080 ccproject.azurecr.io/norman-protector-of-the-castle:latest ."
   },
   "devDependencies": {
     "terser": "^5.14.2",
