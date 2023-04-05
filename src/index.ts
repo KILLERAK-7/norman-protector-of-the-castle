@@ -12,6 +12,8 @@ import { dust } from "./fx";
 import { BPM, play } from "./sounds";
 import { March } from "./behaviours";
 
+
+
 let player = Player();
 player.sprite = sprites.skull;
 let game = new Game(player);
