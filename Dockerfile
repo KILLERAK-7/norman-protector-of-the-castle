@@ -9,4 +9,4 @@ RUN npm install
 
 COPY . /usr/src/app
 
-CMD ["npm","run", "build","&&","npm","run","preview"]
+CMD ["npm","run", "build"]
