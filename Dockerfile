@@ -1,4 +1,4 @@
-FROM node:17
+FROM node:17 as development
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -11,7 +11,7 @@ COPY . /usr/src/app
 
 RUN npm run build
 
-FROM node:17
+FROM node:17 as production
 
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
@@ -22,7 +22,7 @@ COPY package*.json ./
 
 RUN npm install --only=production
 
-COPY --from=0 /usr/src/app/dist ./dist
+COPY --from=development /usr/src/app/dist ./dist
 
 EXPOSE 3000
 
