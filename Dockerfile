@@ -1,29 +1,14 @@
-FROM node:17 as development
+FROM node:17.3.0-alpine3.14
 
 # Create app directory
-WORKDIR /usr/src/app
+WORKDIR /usr/app
 
-COPY package*.json ./
+COPY package.json ./
 
 RUN npm install
 
-COPY . /usr/src/app
-
-RUN npm run build
-
-FROM node:17 as production
-
-ARG NODE_ENV=production
-ENV NODE_ENV=${NODE_ENV}
-
-WORKDIR /usr/src/app
-
-COPY package*.json ./
-
-RUN npm install --only=production
-
-COPY --from=development /usr/src/app/dist ./dist
+COPY . /usr/app
 
 EXPOSE 3000
 
-CMD [ "node", "dist/index.html" ]
+CMD ["npm","run","dev"]
