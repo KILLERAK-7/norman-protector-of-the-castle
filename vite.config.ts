@@ -2,6 +2,9 @@ import { defineConfig, Plugin } from "vite";
 
 export default defineConfig({
   plugins: [singleFile()],
+  server:{
+    port: 8080,
+  },
   base: "./",
   build: {
     polyfillModulePreload: false,
